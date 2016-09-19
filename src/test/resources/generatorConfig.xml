@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  
+  <classPathEntry location="/home/amiya/.m2/repository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar" />
+
+  <context id="context">
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/knight" 
+    				driverClass="com.mysql.jdbc.Driver" 
+    				password="" 
+    				userId="root" />
+    				
+    <javaModelGenerator targetPackage="com.amiyasahu.spm.model" targetProject="spring-mybatis-sample/src/main/java" />
+    <sqlMapGenerator targetPackage="com.amiyasahu.spm.model" targetProject="spring-mybatis-sample/src/test/resources" />
+    <javaClientGenerator targetPackage="com.amiyasahu.spm.dao" targetProject="spring-mybatis-sample/src/main/java" type="XMLMAPPER" />
+   
+    <table schema="" tableName="customers" domainObjectName="Customer"/>
+    <table schema="" tableName="employees" domainObjectName="Employee"/>
+    <table schema="" tableName="offices" domainObjectName="Ofice"/>
+    <table schema="" tableName="orderdetails" domainObjectName="OrderDetail"/>
+    <table schema="" tableName="orders" domainObjectName="Order"/>
+    <table schema="" tableName="payments" domainObjectName="Payment"/>
+    <table schema="" tableName="productlines" domainObjectName="ProductLine"/>
+    <table schema="" tableName="products" domainObjectName="Product"/>
+  
+  </context>
+</generatorConfiguration>

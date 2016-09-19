@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="${db.knight.url}" />
+		<property name="username" value="${db.knight.username}" />
+		<property name="password" value="${db.knight.password}" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:config/mybatisConfig.xml" />
+	</bean>
+
+	<!-- =============== MyBATIS beans configuration ================== -->
+	<bean id="spMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="com.amiyasahu.spm.dao.SPMapper" />
+	</bean>
+
+	<!-- =================== Service beans configuration ================== -->
+	<bean id="spService" class="com.amiyasahu.spm.service.SPService">
+		<property name="spMapper" ref="spMapper" />
+	</bean>
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<typeAliases>
+		<typeAlias type="com.amiyasahu.spm.model.Customer" alias="Customer" />
+		<typeAlias type="com.amiyasahu.spm.model.Employee" alias="Employee" />
+		<typeAlias type="com.amiyasahu.spm.model.Ofice" alias="Ofice" />
+		<typeAlias type="com.amiyasahu.spm.model.OrderDetail" alias="OrderDetail" />
+		<typeAlias type="com.amiyasahu.spm.model.Order" alias="Order" />
+		<typeAlias type="com.amiyasahu.spm.model.Payment" alias="Customers" />
+		<typeAlias type="com.amiyasahu.spm.model.ProductLine" alias="ProductLine" />
+		<typeAlias type="com.amiyasahu.spm.model.Product" alias="Product" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/SPMapper.xml" />
+	</mappers>
+</configuration>

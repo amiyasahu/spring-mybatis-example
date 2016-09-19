@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.amiyasahu.spm.dao.SPMapper">
+	
+	<resultMap id="CustomerBaseResultMap" type="Customer">
+		<id column="customerNumber" jdbcType="INTEGER" property="customernumber" />
+		<result column="customerName" jdbcType="VARCHAR" property="customername" />
+		<result column="contactLastName" jdbcType="VARCHAR" property="contactlastname" />
+		<result column="contactFirstName" jdbcType="VARCHAR" property="contactfirstname" />
+		<result column="phone" jdbcType="VARCHAR" property="phone" />
+		<result column="addressLine1" jdbcType="VARCHAR" property="addressline1" />
+		<result column="addressLine2" jdbcType="VARCHAR" property="addressline2" />
+		<result column="city" jdbcType="VARCHAR" property="city" />
+		<result column="state" jdbcType="VARCHAR" property="state" />
+		<result column="postalCode" jdbcType="VARCHAR" property="postalcode" />
+		<result column="country" jdbcType="VARCHAR" property="country" />
+		<result column="salesRepEmployeeNumber" jdbcType="INTEGER"
+			property="salesrepemployeenumber" />
+		<result column="creditLimit" jdbcType="DECIMAL" property="creditlimit" />
+	</resultMap>
+
+	<select id="getCustomerById" parameterType="java.lang.String" resultMap="CustomerBaseResultMap">
+		select
+			customerNumber, 
+			customerName, 
+			contactLastName, 
+			contactFirstName, 
+			phone, 
+			addressLine1,
+			addressLine2, 
+			city, 
+			state, 
+			postalCode, 
+			country,
+			salesRepEmployeeNumber, 
+			creditLimit
+		from customers
+		WHERE 
+			customerNumber = #{id}
+	</select>
+
+</mapper>
