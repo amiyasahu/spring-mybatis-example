@@ -12,6 +12,7 @@ public class SelectOneCustomerApp {
 		ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
 		DBOperations dbOperations = (DBOperations) context.getBean("DBOperations");
 		dbOperations.showOneCustomerById("103");
+		((ClassPathXmlApplicationContext) context).close();
 	}
 
 }
